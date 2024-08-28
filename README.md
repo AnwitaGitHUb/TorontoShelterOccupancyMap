@@ -161,6 +161,8 @@ Methods to distinguish shelters based on occupancy include the "firstQuartile", 
 which is used with numpy to calculate the first, second, and third quartiles respectively based on an array of occupancies. 
 
 # Project Structure
+- Images
+  - This directory contains all images.
 - src
   - This folder contains all the code that built the visualization.
   - data
