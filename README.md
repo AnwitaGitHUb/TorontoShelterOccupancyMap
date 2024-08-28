@@ -23,7 +23,7 @@ In order to access the different menus in the dropdown, the user must hover on t
 Here, we can see two layers on an icon. By hovering on that icon, we can toggle different menus on and off. 
 Simply access the menu of your choice. Please note that by default, all menus are turned on.
 
-![img_2.png](Images/img_2.png)
+![img.png](Images/img_2.png)
 
 On the bottom right of the interface, the user can access a minimap. This minimap allows the user to visualize the map in a small box as well as access different parts of the map easily by dragging on location in the box.
 
