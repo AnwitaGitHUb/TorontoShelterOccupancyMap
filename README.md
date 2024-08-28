@@ -141,7 +141,7 @@ ability to identify where a certain program falls in terms of occupancy with res
 
 ### WomenSector, MenSector, CoedSector, YouthSector:
 
-The children classes, "WomenSector", "MenSector", "CoedSector", "YouthSector", inherit from the parent class, with
+The children classes: "WomenSector", "MenSector", "CoedSector", "YouthSector" all inherit from the parent class, with
 the created objects being displayed on the Women Shelter, Men Shelters, Coed Shelters and
 Youth Shelters menu in the dropdown. They all are also all display together on 
 one map. 
@@ -165,6 +165,10 @@ which is used with numpy to calculate the first, second, and third quartiles res
   - This directory contains all images.
 - src
   - This folder contains all the code that built the visualization.
+  - controers
+    - This folder contains the "index.html", to which the map visualization is saved and then converted to a leaflet.js map.
+    When opening this file, the user can open the visualization of pycharm or a web browser by clicking the icons.
+    This file also contains the main.py, which hosts the main code, calling other code to make the program run.
   - data
     - Daily shelter Occupancy 2020.json 
     - This folder contains the json dataset file from the Open Data Portal. 
