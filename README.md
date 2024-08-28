@@ -4,7 +4,7 @@ This project is designed to analyze and visualize the homeless shelter occupanci
 The dataset used in this project has been obtained from the City of Toronto's Open Data Portal. Please refer to the following link to access the data: https://open.toronto.ca/dataset/daily-shelter-occupancy/.
 The map presents different shelters which are primarily dispersed across the City of Toronto, with some shelters located in other cities.
 
-![Screenshot 2024-08-10 220938.png](Images/Screenshot 2024-08-10 220938.png)
+![Screenshot 2024-08-10 220938.png](Images/Screenshot_2024-08-10_220938.png)
 
 Different menu options, such as the ability to filter shelters by their sector demographic (men, women, etc.) as well as the ability to visualize a particular program's occupancy with respect to other shelters are also included.
 The different libraries used are listed as follows:
@@ -18,12 +18,12 @@ Every calculation performed within this project was done with the goal of eventu
 As such, folium was very important in the functionality of this program.
 In order to access the different menus in the dropdown, the user must hover on the top right of the visualization. 
 
-![Toronto Map shelter dropdown menu.png](Images/Toronto Map shelter dropdown menu.png)
+![Toronto Map shelter dropdown menu.png](Images/Toronto_Map_shelter_dropdown_menu.png)
 
 Here, we can see two layers on an icon. By hovering on that icon, we can toggle different menus on and off. 
 Simply access the menu of your choice. Please note that by default, all menus are turned on.
 
-![img.png](Images/img_2.png)
+![img_2.png](Images/img_2.png)
 
 On the bottom right of the interface, the user can access a minimap. This minimap allows the user to visualize the map in a small box as well as access different parts of the map easily by dragging on location in the box.
 
