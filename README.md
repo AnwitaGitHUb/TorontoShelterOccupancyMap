@@ -101,7 +101,7 @@ if a shelter program acts as one for emergency weather situations.
 - [Overview](#overview)
 - [Project Structure] (#Project Structure)
 - [Classes and Methods] (#Classes_and_method)
-- [Dataset] (#Dataset)
+- [DataSet] (#Dataset)
 # Classes and Methods 
 In the dataset, many of the shelters have characteristics which are both similar and different to those of other shelters within the data. 
 As a result, the different classes in the program subdivide the data into different categories based on the different attributes possessed by each shelter
