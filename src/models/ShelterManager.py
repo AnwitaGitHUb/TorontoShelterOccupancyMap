@@ -2,7 +2,7 @@ import folium as fl
 import pandas as pd
 from src import constants as c
 from src.models import shelter
-import numpy as np
+
 
 
 class ShelterManager():

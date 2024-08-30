@@ -1,6 +1,4 @@
-import pandas as pd
-import pgeocode
-import numpy as np
+
 import folium as fl
 from src import constants as c
 

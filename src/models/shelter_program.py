@@ -1,5 +1,5 @@
-import numpy
-import pandas as pd
+import folium
+
 from src import constants as c
 from src.models import shelter as sc
 
@@ -36,16 +36,17 @@ class shelterProgram(sc.Shelter):
                         count += 1
         if count == 0:
             return  # To avoid division by zero if there are no valid entries
-        average_rate_sum = (occ_rate_sum / count) * 100
+        average_rate_sum = round(((occ_rate_sum / count) * 100),2)
         return average_rate_sum
 
     def popUpText(self):
         # generating text that will be displayed on popup with shelter's information including program
-        popUpText = (f"popup'> Organization Name: {self.getOrganizationName()}, Shelter Address: {self.getAddress()}, "
-                     f"Name of Shelter: {self.getShelterName()}, Name of Program: {self.getProgramName()} City: {self.getCity()}, Postal Code: {self.getPostalCode()}, "
-                     f" Average Annual Occupancy:{self.calculateAverageDailyOccupancy()}, Average Annual Rate of Occupancy:"
-                     f"{self.calculateAverageDailyOccupancyRate()}% </div>")
-        return popUpText
+        iframe = folium.IFrame(f" <b>Organization Name: </b> {self.getOrganizationName()} <br><br> <b>Shelter Address: </b>{self.getAddress()} <br><br> <b>"
+                     f"Name of Shelter: </b>{self.getShelterName()} <br><br> <b>Name of Program:</b> {self.getProgramName()} <br><br> <b> City:</b> {self.getCity()}   <br><br> <b>Postal Code:</b> {self.getPostalCode()} <br><br> "
+                     f" <b>Average Annual Occupancy:</b> {self.calculateAverageDailyOccupancy()} <br><br> <b> Average Annual Rate of Occupancy:"
+                     f"</b> {self.calculateAverageDailyOccupancyRate()}% </div>")
+        popup = folium.Popup(iframe, min_width = 300, max_width=300)
+        return popup
 
     def getProgramName(self):
         return self._program

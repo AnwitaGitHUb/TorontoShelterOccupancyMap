@@ -1,6 +1,5 @@
 
 import numpy as np
-import pandas as pd
 from src import constants as c
 from src.models import shelter_program as spc
 import folium as fl
