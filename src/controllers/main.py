@@ -51,8 +51,8 @@ def main():
     clean_coordinates(coordinates)
 
     # transferring coordinate data into dataframe
-    data["Shelter_Coordinates_Latitude"] = coordinates["latitude"]
-    data["Shelter_Coordinates_Longitude"] = coordinates["longitude"]
+    data[c.DATA_LATITUDE] = coordinates["latitude"]
+    data[c.DATA_LONGITUDE] = coordinates["longitude"]
     # print(data)
     #
     # # #adding a new column based on an existing column - new column identifies if shelter is in the city of Toronto
@@ -103,8 +103,8 @@ def init_shelters(data):
         shelterObject = sc.Shelter(row[c.DATA_ADDRESS], row[c.DATA_ORGANIZATION_NAME],
                                                   row[c.DATA_SHELTER_NAME], row[c.DATA_CITY],
                                                   row[c.DATA_POSTAL_CODE],
-                                                  row["Shelter_Coordinates_Latitude"],
-                                                  row["Shelter_Coordinates_Longitude"], data)
+                                                  row[c.DATA_LATITUDE],
+                                                  row[c.DATA_LONGITUDE], data)
 
     shelter_program_list = []
 
@@ -114,8 +114,8 @@ def init_shelters(data):
         shelterProgramObject = spc.shelterProgram(row[c.DATA_ADDRESS], row[c.DATA_ORGANIZATION_NAME],
                                                   row[c.DATA_SHELTER_NAME], row[c.DATA_CITY],
                                                   row[c.DATA_POSTAL_CODE],
-                                                  row["Shelter_Coordinates_Latitude"],
-                                                  row["Shelter_Coordinates_Longitude"],
+                                                  row[c.DATA_LATITUDE],
+                                                  row[c.DATA_LONGITUDE],
                                                   row[c.DATA_PROGRAM_NAME], data)
         shelter_program_list.append(shelterProgramObject)
 
@@ -126,9 +126,9 @@ def init_shelters(data):
         weatherShelterObject = wsc.WeatherShelter(row[c.DATA_ADDRESS], row[c.DATA_ORGANIZATION_NAME],
                                                   row[c.DATA_SHELTER_NAME], row[c.DATA_CITY],
                                                   row[c.DATA_POSTAL_CODE],
-                                                  row["Shelter_Coordinates_Latitude"],
-                                                  row["Shelter_Coordinates_Longitude"],
-                                                  row["WEATHER"], row[c.DATA_PROGRAM_NAME], data)
+                                                  row[c.DATA_LATITUDE],
+                                                  row[c.DATA_LONGITUDE],
+                                                  row[c.DATA_WEATHER], row[c.DATA_PROGRAM_NAME], data)
         # adds the newly created shelter object to the list of stored shelters
         weather_shelter_list.append(weatherShelterObject)
 
@@ -140,16 +140,16 @@ def init_shelters(data):
         sectorShelterObject = ws.womenShelter(row[c.DATA_ADDRESS], row[c.DATA_ORGANIZATION_NAME],
                                               row[c.DATA_SHELTER_NAME], row[c.DATA_CITY],
                                               row[c.DATA_POSTAL_CODE],
-                                              row["Shelter_Coordinates_Latitude"],
-                                              row["Shelter_Coordinates_Longitude"],
+                                              row[c.DATA_LATITUDE],
+                                              row[c.DATA_LONGITUDE],
                                               row[c.DATA_SECTOR], row[c.DATA_PROGRAM_NAME], data)
         women_programs.append(sectorShelterObject)
     for index, row in data.iterrows():
         sectorShelterObject = ms.ProgramMen(row[c.DATA_ADDRESS], row[c.DATA_ORGANIZATION_NAME],
                                             row[c.DATA_SHELTER_NAME], row[c.DATA_CITY],
                                             row[c.DATA_POSTAL_CODE],
-                                            row["Shelter_Coordinates_Latitude"],
-                                            row["Shelter_Coordinates_Longitude"],
+                                            row[c.DATA_LATITUDE],
+                                            row[c.DATA_LONGITUDE],
                                             row[c.DATA_SECTOR], row[c.DATA_PROGRAM_NAME], data)
         men_programs.append(sectorShelterObject)
     for index, row in data.iterrows():
@@ -194,8 +194,8 @@ def init_weather(data):
     # Creating a new weather column based on if a program's name contains the word "Weather
     # if it contains the word "Weather", return true, else, return false
     # These shelters are used for purposes of weather emergencies
-    data["WEATHER"] = data["PROGRAM_NAME"]
-    data["WEATHER"] = np.where(data['WEATHER'].str.contains("Weather"), True, False)
+    data[c.DATA_WEATHER] = data[c.DATA_PROGRAM_NAME]
+    data[c.DATA_WEATHER] = np.where(data[c.DATA_WEATHER].str.contains("Weather"), True, False)
 
 
 def init_options():

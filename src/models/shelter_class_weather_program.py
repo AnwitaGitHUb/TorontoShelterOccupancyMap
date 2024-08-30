@@ -65,7 +65,7 @@ class WeatherShelter(spc.shelterProgram):
         :return: average_occupancies: a list of sorted weather program occupancies
         """
         # creating new dataset by filtering original dataset to just have rows that have weather programs
-        quartile = getData[getData["WEATHER"] == True]
+        quartile = getData[getData[c.DATA_WEATHER] == True]
         #  initializing a list to store occupancies
         average_occupancies = []
         for index, row in quartile.iterrows():
